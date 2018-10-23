@@ -1,0 +1,197 @@
+@border-color: #e1e1e1;
+@color-green: #3da51d;
+@color-red: #bb1414;
+@color-brown: #000000;
+@color-blue: #2e7acc;
+
+
+@heading-font-size: 16px;
+@text-font-size: 14px;
+
+html, body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	// font-size: @text-font-size;
+}
+
+* {
+	box-sizing: border-box;
+}
+#app {
+	
+	.app-body {
+		.header {
+			.tab-list {
+				width: 100%;
+				display: flex;
+
+				.tab {
+					padding: 10px;
+					color: white;
+					width: 33%;
+					cursor: pointer;
+					transition: all .5s ease-in;
+					&.active {
+						padding: 12px;
+					}
+					&.all {
+						background-color: @color-brown;
+
+					}
+					&.red {
+						background-color: @color-red;
+
+					}
+					&.green {
+						background-color: @color-green;
+
+					}
+					&.blue {
+						background-color: @color-blue;
+
+					}
+				}
+			}
+		}
+
+		.create-app-panel,
+		.todo-item {
+			float: left;
+			padding: 20px;
+		}
+		.create-app-panel {
+			width: 75%;
+			height: 400px;
+
+			.todo-type-list {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				max-width: 200px;
+
+				.todo-type {
+					padding: 5px;
+					color: white;
+					width: 33%;
+					cursor: pointer;
+					transition: all .2s ease-in;
+
+					&.active {
+						padding: 7px;
+					}
+
+					& > input[type=radio] {
+						opacity: 0;
+						width: 0;
+						height: 0;
+
+					}
+					&:first-child {
+						border-top-left-radius: 3px;
+						border-bottom-left-radius: 3px;
+					}
+					&:last-child {
+						border-top-right-radius: 3px;
+						border-bottom-right-radius: 3px;
+					}
+					&.red {
+						background-color: @color-red;
+
+					}
+					&.green {
+						background-color: @color-green;
+
+					}
+					&.blue {
+						background-color: @color-blue;
+
+					}
+				}
+			}
+			.todo-name {
+				margin-top: 50px;
+				input {
+					width: 200px;
+					padding: 10px 15px;
+					outline: none;
+					box-shadow: none;
+					border: 1px solid @border-color;
+				}
+			}
+			.actions {
+				margin-top: 20px;
+
+				.create-todo {
+					padding: 10px;
+				    outline: none;
+				    border: 1px solid #e1e1e1;
+				    background-color: #3da51c;
+				    color: white;
+				    border-radius: 3px;
+				    cursor: pointer;
+				}
+
+
+			}
+			.error-message {
+				display: none;
+				color: @color-red;
+				font-size: 16px;
+				margin-top: 20px;
+
+				&.show {
+					display: block;
+				}
+			}
+			
+		}
+		.todo-item {
+			width: 25%;
+		    height: 200px;
+		    float: left;
+		    border: 1px solid #e1e1e1;
+		    position: relative;
+		    cursor: pointer;
+
+		   	.todo-name {
+
+		   	}
+
+		    .todo-tag {
+		    	width: 30px;
+			    height: 30px;
+			    position: absolute;
+			    right: 5px;
+			    top: 5px;
+			    border-radius: 50%;
+			    border: 5px solid red;
+			    &.red {
+					border-color: @color-red;
+
+				}
+				&.green {
+					border-color: @color-green;
+
+				}
+				&.blue {
+					border-color: @color-blue;
+				}
+			}
+		}	
+	}
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 750px) {
+	#app {
+	
+		.app-body {
+			.create-app-panel,
+		   .todo-item {
+		   	width: 100%;
+		   }
+		}
+	}
+   
+}

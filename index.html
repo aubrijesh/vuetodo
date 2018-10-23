@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div id="app">
+		
+		<div class="app-body">
+			<div class="create-app-panel">
+				<div class="header">
+					<div class="tab-list">
+						<div class="tab all" v-on:click="filterTabSelected('all')" v-bind:class="{ active: filtered_todo_type == 'all'}">
+							All
+						</div>
+						<div class="tab" v-bind:class="{ active: filtered_todo_type == tag, red: tag == 'red', green: tag == 'green', blue: tag == 'blue'}"  v-for="tag in tags" v-on:click="filterTabSelected(tag)">
+							{{tag}}
+						</div>
+					</div>
+				</div>
+
+				<h4> Create New Todo</h4>
+				<div class='todo-type-list'>
+					<div class="todo-type" v-bind:class="{ active: todo_type == tag, red: tag == 'red', green: tag == 'green', blue: tag == 'blue'}"  v-for="tag in tags" v-on:click="todoTypeChanged(tag)">
+						{{tag}}
+						<input type="radio" value="red" name="todo-type" v-model="todo_type">
+					</div>
+					<!-- <div class="todo-type green" >
+						Green
+						<input type="radio" value="green" name="todo-type" v-model="todo_type">
+					</div>
+					<div class="todo-type blue" >
+						Blue
+						<input type="radio" value="blue" name="todo-type" v-model="todo_type">
+					</div> -->
+				</div>
+				<div class="todo-name">
+					<input class="todo-name-input" type="text" placeholder="Enter todo name" v-model="todo_name" />
+				</div>
+				<div class='actions'>
+					<button class="create-todo" v-on:click="createTodo()">Create Todo</button>
+				</div>
+				<div class="error-message" v-bind:class="{show: is_error}">{{error_message}}</div>
+			</div>
+
+			<div class="todo-item"  v-for="todo in filteredTodoList" v-on:click="openTodo()">
+				<div class="todo-name">
+					{{todo.name}}
+				</div>
+				<div class="todo-tag" v-bind:class="{red:todo.tag == 'red', green:todo.tag == 'green', blue:todo.tag == 'blue'}">
+					
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

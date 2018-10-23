@@ -1,0 +1,145 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+#app .app-body .header .tab-list {
+  width: 100%;
+  display: flex;
+}
+#app .app-body .header .tab-list .tab {
+  padding: 10px;
+  color: white;
+  width: 33%;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+#app .app-body .header .tab-list .tab.active {
+  border: 1px solid white;
+}
+#app .app-body .header .tab-list .tab.all {
+  background-color: #000000;
+}
+#app .app-body .header .tab-list .tab.red {
+  background-color: #bb1414;
+}
+#app .app-body .header .tab-list .tab.green {
+  background-color: #3da51d;
+}
+#app .app-body .header .tab-list .tab.blue {
+  background-color: #2e7acc;
+}
+#app .app-body .create-app-panel,
+#app .app-body .todo-item {
+  float: left;
+  padding: 20px;
+}
+#app .app-body .create-app-panel {
+  width: 75%;
+  height: 400px;
+}
+#app .app-body .create-app-panel .todo-type-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 200px;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type {
+  padding: 5px;
+  color: white;
+  width: 33%;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type.active {
+  padding: 7px;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type > input[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type.red {
+  background-color: #bb1414;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type.green {
+  background-color: #3da51d;
+}
+#app .app-body .create-app-panel .todo-type-list .todo-type.blue {
+  background-color: #2e7acc;
+}
+#app .app-body .create-app-panel .todo-name {
+  margin-top: 50px;
+}
+#app .app-body .create-app-panel .todo-name input {
+  width: 200px;
+  padding: 10px 15px;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #e1e1e1;
+}
+#app .app-body .create-app-panel .actions {
+  margin-top: 20px;
+}
+#app .app-body .create-app-panel .actions .create-todo {
+  padding: 10px;
+  outline: none;
+  border: 1px solid #e1e1e1;
+  background-color: #3da51c;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#app .app-body .create-app-panel .error-message {
+  display: none;
+  color: #bb1414;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#app .app-body .create-app-panel .error-message.show {
+  display: block;
+}
+#app .app-body .todo-item {
+  width: 25%;
+  height: 200px;
+  float: left;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  cursor: pointer;
+}
+#app .app-body .todo-item .todo-tag {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 50%;
+  border: 5px solid red;
+}
+#app .app-body .todo-item .todo-tag.red {
+  border-color: #bb1414;
+}
+#app .app-body .todo-item .todo-tag.green {
+  border-color: #3da51d;
+}
+#app .app-body .todo-item .todo-tag.blue {
+  border-color: #2e7acc;
+}
+@media only screen and (min-width: 320px) and (max-width: 750px) {
+  #app .app-body .create-app-panel,
+  #app .app-body .todo-item {
+    width: 100%;
+  }
+}
